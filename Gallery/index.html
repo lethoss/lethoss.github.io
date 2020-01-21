@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="js/gallery.js"></script>
+    <title>Знайомство з JS</title>
+  <style>
+  #gallery{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  img{
+    padding: 5px;
+    min-width: 200px;
+    min-height: 200px;
+    max-width: 300px;
+    max-height: 300px;
+  }
+
+
+  </style>
+</head>
+<body>
+	<div id="gallery">
+		<img id="currentPhoto" src="images/photo1.jpg" />
+	</div>
+	<button id="next" onclick="nextPhoto()">Next</button>
+	<button id="add" onclick="addPhoto()">Add</button>
+</body>
+</html>
