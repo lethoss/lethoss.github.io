@@ -1,28 +1,21 @@
 
 function add100Photo(){
+let gallery=document.getElementById('gallery');
 j=1;
-  for (let i=0; i<100; i++){
-  //  let newText=document.createElement("div");
-    //let div=document.createElement("div");
-    //newText.innerHTML="Елемент каталогу № " + (i+1);
-  //let newImage=document.createElement("img");
-//  newImage.src="images/photo" + j + ".jpg";
-  //newImage.style.right=(parseInt(newImage.style.right) || 0) + 300 + 'px';
-  let gallery = document.getElementById('gallery');
-  if (i%2!=0) {
-gallery.insertAdjacentHTML('beforeend',' <div>' +
-'<div class="green">Елемент каталогу № '+ (i+1)+' </div>'+
-'<img class="border" src=images/photo'+j+'.jpg >' +
-  '</div>'  );
+for (let i=1; i<=100; i++){
+  let div=document.createElement('div');
+  if (i%2==0) div.setAttribute('class','plitka2');
+  let img=document.createElement('img');
+  let text=document.createElement('div');
+  text.innerHTML='Плитка №'+i;
+  img.src="images/photo"+j+".jpg";
+  gallery.appendChild(div);
+  div.appendChild(text);
+  div.appendChild(img);
+  if (j==5) j=1;
+  j++;
 }
-else
-{ gallery.insertAdjacentHTML('beforeend',' <div>' +
-'<div>Елемент каталогу № '+ (i+1)+' </div>'+
-'<img src=images/photo'+j+'.jpg >' +
-  '</div>'  );}
-//gallery.appendChild(newText);
-//gallery.appendChild(newImage);
-    if (j==4) j=0;
-    j++;
-}
+document.getElementById("button1").disabled="true";
+button1.innerHTML="You allredy added 100 photo ";
+button1.style.color="blue";
 }
