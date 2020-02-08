@@ -1,0 +1,36 @@
+#content{
+  display: flex;
+justify-content: space-between;
+flex-wrap: wrap;
+}
+form {
+    width: 400px;
+}
+.permission{
+  display: none;
+}
+.numberOfAxles{
+  display: none;
+}
+
+.chooseTransport{
+  display: none;
+}
+.mainForm{
+  display: none;
+}
+p{
+  margin: 10px;
+  background-color: lightblue;
+  text-align: center;
+  border: solid;
+  border-color: brown;
+  min-width: 250px;
+  max-width: 400px;
+padding: 5px;
+color:green;
+}
+
+body{
+  background-color: lightgrey;
+}
