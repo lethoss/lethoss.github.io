@@ -1,0 +1,57 @@
+body{
+  background-color: lightgrey;
+}
+img{
+  width: 100%;
+}
+.imgWithCaption{
+  text-align: center;
+  border: double;
+  background-color: lightblue;
+  margin: 1rem;
+}
+p{
+  text-align: justify;
+}
+button{
+  margin-top: 0.4rem;
+  margin-bottom: 0.4rem;
+}
+#fuel{
+  background-color: lightblue;
+}
+
+.false{
+  display: inline;
+  background-color: #ff1122;
+  text-align: left;
+  border:solid;
+   border-width:thin;
+   padding-left: 0.4rem;
+   padding-right: 0.4rem;
+}
+.right{
+  display: inline;
+  background-color: green;
+  text-align: left;
+  border:solid;
+   border-width:thin;
+   padding-left: 0.4rem;
+   padding-right: 0.4rem;
+}
+input{
+  margin: 0.4rem;
+}
+.list-group-item{
+  background-color: lightgrey;
+}
+.list-group-item:hover{
+  background-color: lightblue;
+}
+h1, h2, h3,h4{
+  margin: 1em;
+  text-align: center;
+}
+.navMenu{
+  margin-top: 6em;
+}
