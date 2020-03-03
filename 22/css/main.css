@@ -1,8 +1,39 @@
-body{
-  background-color: lightgrey;
-}
+
 img{
   width: 100%;
+  height: 100%;
+}
+#fon{
+  position: fixed;
+   z-index: -5;
+   width: 100%;
+   height: 100%;
+   background: #000;
+   opacity: 0.5;
+  bottom:0.0001%;
+  right:0.0001%;
+}
+#hiddenImg{
+  display: none;
+  position:absolute;
+  right:15rem;
+  width:600px;
+  height:600px;
+  z-index: 10;
+  background-color: lavenderblush;
+}
+#hiddenImg img{
+  border: double;
+}
+#closeButton{
+  position:fixed;
+  top:88%;
+  left:45%;
+  background-color: lightblue;
+  border:double;
+  border-color: black;
+  height: 5%;
+  width: 10%;
 }
 .imgWithCaption{
   text-align: center;
@@ -26,24 +57,29 @@ button{
   background-color: #ff1122;
   text-align: left;
   border:solid;
-   border-width:thin;
-   padding-left: 0.4rem;
-   padding-right: 0.4rem;
+  border-width:thin;
+  padding-left: 0.4rem;
+  padding-right: 0.4rem;
 }
 .right{
   display: inline;
   background-color: green;
   text-align: left;
   border:solid;
-   border-width:thin;
-   padding-left: 0.4rem;
-   padding-right: 0.4rem;
+  border-width:thin;
+  padding-left: 0.4rem;
+  padding-right: 0.4rem;
 }
 input{
-  margin: 0.4rem;
+  margin-right:  0.4rem;
+}
+label{
+  margin-top: 0.6em;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
 }
 .list-group-item{
-  background-color: lightgrey;
+  background-color: lavenderblush;
 }
 .list-group-item:hover{
   background-color: lightblue;
@@ -54,4 +90,38 @@ h1, h2, h3,h4{
 }
 .navMenu{
   margin-top: 6em;
+}
+@media (max-width: 992px){
+  .imgWithCaption{max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+img{
+  max-height: 100%;
+  max-width: 100%;
+}
+#fon{
+  display: none;
+}
+ #hiddenImg{
+  background-color: transparent;
+  top:5% !important;
+  left:5% !important;
+  margin-left: 0px !important;
+  margin-top: 0px !important;
+  width: 90%;
+  height: 90%;
+}
+#closeButton{
+  width: 30%;
+  left:38%;
+  top:94%;
+}
+label{
+  display: inline;
+}
+h1{
+margin: 0;
+font-size: 2.2em;
+}
 }
