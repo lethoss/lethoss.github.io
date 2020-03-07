@@ -1,15 +1,24 @@
-let flag=0;
-document.querySelector('#test1').onsubmit=function(e){
-    e.preventDefault();
-    let test1=e.target;
-    let idOfDivWithAnsver='#test11';
-    let rightAnswers=[1,3,4];
-if(test1[1].checked == true && test1[3].checked == true && test1[4].checked == true && test1[0].checked == false && test1[2].checked == false) {
-rightAnswer(idOfDivWithAnsver,rightAnswers);
-}
+
+function checkboxFormProcessing(e,idOfDivWithAnsver,rightAnswers){
+  e.preventDefault();
+  let test1=e.target;
+  let temp=[];
+    for (i=0; i<test1.length; i++){
+      temp[i]=test1[i].checked;
+    }
+  if(temp.join('') == rightAnswers.join('')){
+    rightAnswer(idOfDivWithAnsver,rightAnswers);
+  }
 else {
-  falseAnswer(idOfDivWithAnsver);}
+  falseAnswer(idOfDivWithAnsver);
+}
 test1.reset();
+}
+
+document.querySelector('#test1').onsubmit=function(e){
+    let idOfDivWithAnsver='#test11';
+    let rightAnswers=[false,true,false,true,true];
+    checkboxFormProcessing(e,idOfDivWithAnsver,rightAnswers);
 }
 
   document.querySelector('#test2').onsubmit=function(e){
@@ -23,42 +32,40 @@ test1.reset();
 }
 
 document.querySelector('#test3').onsubmit=function(e){
-  e.preventDefault();
-    let test1=e.target;
-    let rightAnswers=[0,1,2];
     let idOfDivWithAnsver='#test33';
-if(test1[0].checked == true && test1[1].checked == true && test1[2].checked == true && test1[3].checked == false && test1[4].checked == false) {
-rightAnswer(idOfDivWithAnsver,rightAnswers);
-}
-else {
-  falseAnswer(idOfDivWithAnsver);}
-test1.reset();
+    let rightAnswers=[true,true,true,false,false];
+    checkboxFormProcessing(e,idOfDivWithAnsver,rightAnswers);
 }
 
 document.querySelector('#test4').onsubmit=function(e){
-  e.preventDefault();
-    let test1=e.target;
-    let rightAnswers=[1];
     let idOfDivWithAnsver='#test44';
-if(test1[1].checked == true) {
-rightAnswer(idOfDivWithAnsver,rightAnswers);
-}
-else {
-  falseAnswer(idOfDivWithAnsver);}
-test1.reset();
+    let rightAnswers=[false,true,false];
+    checkboxFormProcessing(e,idOfDivWithAnsver,rightAnswers);
 }
 
+
 document.querySelector('#test5').onsubmit=function(e){
-  e.preventDefault();
-    let test1=e.target;
-    let rightAnswers=[1,3]
     let idOfDivWithAnsver='#test55';
-if(test1[1].checked == true && test1[3].checked && test1[0].checked == false && test1[2].checked == false) {
-rightAnswer(idOfDivWithAnsver,rightAnswers);
+    let rightAnswers=[false,true,false,true];
+    checkboxFormProcessing(e,idOfDivWithAnsver,rightAnswers);
 }
-else {
-  falseAnswer(idOfDivWithAnsver);}
-test1.reset();
+
+document.querySelector('#test6').onsubmit=function(e){
+    let idOfDivWithAnsver='#test66';
+    let rightAnswers=[false,true,false,true,true,false,true];
+    checkboxFormProcessing(e,idOfDivWithAnsver,rightAnswers);
+}
+
+document.querySelector('#test7').onsubmit=function(e){
+    let idOfDivWithAnsver='#test77';
+    let rightAnswers=[true,false,false,false];
+    checkboxFormProcessing(e,idOfDivWithAnsver,rightAnswers);
+}
+
+document.querySelector('#test8').onsubmit=function(e){
+    let idOfDivWithAnsver='#test88';
+    let rightAnswers=[false,false,true,false];
+    checkboxFormProcessing(e,idOfDivWithAnsver,rightAnswers);
 }
 
 function rightAnswer(idOfDivWithAnsver,rightAnswers) {
@@ -74,8 +81,7 @@ function rightAnswer(idOfDivWithAnsver,rightAnswers) {
      let form = document.querySelector(idOfForm);
      let greenLabels = form.querySelectorAll('label');
      greenLabels.forEach((item, i) => {
-       for (j in rightAnswers){
-       if(i==rightAnswers[j])  item.style.backgroundColor="green";}
+       if(rightAnswers[i]==true)  item.style.backgroundColor="green";
      });
      let inputs = form.querySelectorAll('input');
      for (i in inputs){
