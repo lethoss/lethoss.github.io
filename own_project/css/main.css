@@ -129,6 +129,17 @@ color:#495057;
 #menuImg{
   display: none;
 }
+#clock{
+  position: absolute;
+top:12%;
+left:85%;
+background-color: lightgreen;
+border:solid;
+border-radius: 50%;
+padding: 5px;
+}
+
+
 @media (max-width: 992px){
   .imgWithCaption{max-width: 300px;
     margin-left: auto;
