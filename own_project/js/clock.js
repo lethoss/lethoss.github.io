@@ -9,7 +9,8 @@ let url="https://api.timezonedb.com/v2.1/get-time-zone?key=XWL8KDUPL5N5&format=j
   })
       .then((response) => {
           return response.json();
-      }).then((data) => {
+      })
+      .then((data) => {
           let res = document.querySelector('#clock')
           let gettedTime = Date.parse(data.formatted);
           let currentTime = new Date();
@@ -18,7 +19,7 @@ let url="https://api.timezonedb.com/v2.1/get-time-zone?key=XWL8KDUPL5N5&format=j
             gettedTime+=1000;
             currentTime.setTime(gettedTime);
             let textTime=currentTime.toString();
-  res.innerText = textTime.substring(16,24);
+            res.innerText = textTime.substring(16,24);
             timerId = setTimeout(clock, 1000);
           }, 1000);
       });
