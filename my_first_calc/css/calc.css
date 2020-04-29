@@ -1,0 +1,15 @@
+button {
+  height: 50px;
+  width: 50px;
+  margin: 1px;
+}
+div {
+  width: 200px;
+  margin: 0 auto;
+}
+input {
+  width: 160px;
+  height: 25px;
+  margin-bottom: 15px;
+  margin-top: 10px;
+}
