@@ -5,3 +5,16 @@ table {
     border-collapse: collapse;
     margin: 5px;
 }
+button {
+  margin: 3px;
+}
+input{
+  padding-left: 2px;
+  width: 99%;
+  height: 100%;
+  border: none;
+}
+#newInput{
+  border: solid;
+  border-width: thin;
+}

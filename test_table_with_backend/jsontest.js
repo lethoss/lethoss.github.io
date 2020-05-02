@@ -1,4 +1,5 @@
 let urlTest = 'http://localhost:3000/tables';
+let num=0;
 document.querySelector('#takeTable').onclick = function (){
 fetch(urlTest)
   .then ((response) => {
@@ -33,18 +34,43 @@ function addElement(data){
       deleteButton.id = i + 'DeleteButton';
       deleteButton.setAttribute('class','deleteButton' + ' ' + i);
       tr.appendChild(deleteButton);
+      let editButton = document.createElement('button');
+      editButton.innerText = 'Редактировать строку';
+      editButton.id = i + 'EditButton';
+      editButton.setAttribute('class','editButton' + ' ' + i);
+      tr.appendChild(editButton);
     }
+
     let deleteButtonArray =  document.querySelectorAll('.deleteButton');
     deleteButtonArray.forEach((item, i) => {
       item.onclick = function(){
-        let rowForDelete = item.id.slice(0,-12);
-        console.log(rowForDelete);
+        let rowForDelete = item.id.slice(0,-12); // deleteButton = 12 symbols
         let itemsforDelete = document.querySelectorAll('.'+rowForDelete);
         itemsforDelete.forEach((item, i) => {
-          console.log(item);
           item.remove();
         });
 
+      }
+    });
+
+    let editButtonArray = document.querySelectorAll('.editButton')
+    editButtonArray.forEach((item, i) => {
+      item.onclick = function(){
+        if (item.innerText == 'Редактировать строку'){
+          item.innerText = 'Сохранить';
+          let rowForEdit = item.id.slice(0,-10); // editButton = 10 symbols
+          let itemsforEdit = document.querySelectorAll('input.' + rowForEdit);
+          itemsforEdit.forEach((item, i) => {
+            item.removeAttribute('readonly');
+          });
+      } else {
+          item.innerText = 'Редактировать строку';
+          let rowForEdit = item.id.slice(0,-10); // editButton = 10 symbols
+          let itemsforEdit = document.querySelectorAll('input.' + rowForEdit);
+          itemsforEdit.forEach((item, i) => {
+            item.setAttribute('readonly','true');
+          });
+        }
       }
     });
 
@@ -59,6 +85,7 @@ document.querySelector('#newRecordButton').setAttribute('disabled', 'true');
   }
   let newInput = document.createElement('input');
   newInput.setAttribute('type', 'text');
+  newInput.id = 'newInput';
   newInput.setAttribute('placeholder', 'Введите название нового животного');
   newInput.style.width = '250px';
   newInput.setAttribute('value', '');
@@ -70,10 +97,13 @@ document.querySelector('#newRecordButton').setAttribute('disabled', 'true');
   newRecord.appendChild(submitButton);
   let newAnimal = '';
   submitButton.onclick = function () {
+    if (newInput.value != ''){
+      newInput.style.backgroundColor = 'white';
     if (newAnimal == ''){
       newAnimal = newInput.value;
       newInput.value = '';
       newInput.placeholder = 'Введите вес нового животного';
+      num +=1;
     } else {
         let newWeight = newInput.value;
         submitButton.remove();
@@ -97,13 +127,14 @@ document.querySelector('#newRecordButton').setAttribute('disabled', 'true');
             return await response.json();
           }
           postData(urlTest, {
-            number: [6],
+            number: [num],
             animals: [newAnimal],
-            weight: [parseInt(newWeight)]
+            weight: [newWeight]
           })
             .then((data) => {
             //  console.log(data);
             });
     }
+} else newInput.style.backgroundColor = "red";
 }
 }
