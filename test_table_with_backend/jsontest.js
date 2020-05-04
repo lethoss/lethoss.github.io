@@ -1,27 +1,63 @@
 let urlTest = 'http://localhost:3000/tables';
-let num=0;
-document.querySelector('#takeTable').onclick = function (){
+document.querySelector('#takeTable').onclick = function (){   // take data from Server
 fetch(urlTest)
   .then ((response) => {
     return response.json();
   })
     .then((data) => {
-addElement(data);
+      data2 = data.addData;
+addTable(data2);
     });
 }
 
-function addElement(data){
+function deleteRow (){
+let deleteButtonArray =  document.querySelectorAll('.deleteButton');
+deleteButtonArray.forEach((item, i) => {
+  item.onclick = function(){
+    let rowForDelete = item.getAttribute('data-row-id');
+    let itemsforDelete = document.querySelectorAll('.'+rowForDelete);
+    itemsforDelete.forEach((item, i) => {
+      item.remove();
+    });
+  }
+});
+}
+
+function editRow (){
+  let editButtonArray = document.querySelectorAll('.editButton')
+  editButtonArray.forEach((item, i) => {
+    item.onclick = function(){
+      if (item.innerText == 'Редактировать строку'){
+        item.innerText = 'Сохранить';
+        let rowForEdit = item.getAttribute('data-row-id');
+        let itemsforEdit = document.querySelectorAll('input.' + rowForEdit);
+        itemsforEdit.forEach((item, i) => {
+          item.removeAttribute('readonly');
+        });
+    } else {
+        item.innerText = 'Редактировать строку';
+        let rowForEdit = item.getAttribute('data-row-id');
+        let itemsforEdit = document.querySelectorAll('input.' + rowForEdit);
+        itemsforEdit.forEach((item, i) => {
+          item.setAttribute('readonly','true');
+        });
+      }
+    }
+  });
+}
+
+function addTable(data){    // create Table with data getted from Server
   let container = document.querySelector('#content');
     for (i in data){
       let tr = document.createElement('tr');
       container.appendChild(tr);
-      let th = document.createElement('th');
+      let th = document.createElement('th'); // create Table Headers with row names
       th.innerText = i;
       th.setAttribute('class',i);
       tr.appendChild(th);
       for (j in data[i]){
         let td = document.createElement('td');
-        let input = document.createElement('input');
+        let input = document.createElement('input'); // create Inputs in each table cell
         input.value = data[i][j];
         input.setAttribute('readonly','true');
         input.setAttribute('class',i);
@@ -31,87 +67,82 @@ function addElement(data){
       }
       let deleteButton = document.createElement('button');
       deleteButton.innerText = 'Удалить строку';
-      deleteButton.id = i + 'DeleteButton';
+      deleteButton.setAttribute('data-row-id',i);
       deleteButton.setAttribute('class','deleteButton' + ' ' + i);
       tr.appendChild(deleteButton);
       let editButton = document.createElement('button');
       editButton.innerText = 'Редактировать строку';
-      editButton.id = i + 'EditButton';
+      editButton.setAttribute('data-row-id',i);
       editButton.setAttribute('class','editButton' + ' ' + i);
       tr.appendChild(editButton);
     }
 
-    let deleteButtonArray =  document.querySelectorAll('.deleteButton');
-    deleteButtonArray.forEach((item, i) => {
-      item.onclick = function(){
-        let rowForDelete = item.id.slice(0,-12); // deleteButton = 12 symbols
-        let itemsforDelete = document.querySelectorAll('.'+rowForDelete);
-        itemsforDelete.forEach((item, i) => {
-          item.remove();
-        });
+    deleteRow();
 
-      }
-    });
-
-    let editButtonArray = document.querySelectorAll('.editButton')
-    editButtonArray.forEach((item, i) => {
-      item.onclick = function(){
-        if (item.innerText == 'Редактировать строку'){
-          item.innerText = 'Сохранить';
-          let rowForEdit = item.id.slice(0,-10); // editButton = 10 symbols
-          let itemsforEdit = document.querySelectorAll('input.' + rowForEdit);
-          itemsforEdit.forEach((item, i) => {
-            item.removeAttribute('readonly');
-          });
-      } else {
-          item.innerText = 'Редактировать строку';
-          let rowForEdit = item.id.slice(0,-10); // editButton = 10 symbols
-          let itemsforEdit = document.querySelectorAll('input.' + rowForEdit);
-          itemsforEdit.forEach((item, i) => {
-            item.setAttribute('readonly','true');
-          });
-        }
-      }
-    });
+    editRow();
 
   }
 
 
-let newText = document.createElement('span');
+let newText = document.createElement('span');  // create success alert
 document.querySelector('#newRecordButton').onclick = function (){
-document.querySelector('#newRecordButton').setAttribute('disabled', 'true');
+let num = 0;
+document.querySelector('#newRecordButton').setAttribute('disabled', 'true');  // disabled button during adding new data
   if (newText) {
-    newText.remove();
+    newText.remove();             // delete success alert if we add new data
   }
-  let newInput = document.createElement('input');
+  let newInput = document.createElement('input');   // create new input for writting new data
   newInput.setAttribute('type', 'text');
   newInput.id = 'newInput';
-  newInput.setAttribute('placeholder', 'Введите название нового животного');
+  let thArrayClass = [];
+  let thArray = document.querySelectorAll('th');
+  thArray.forEach((item, i) => {
+    thArrayClass[i] = item.getAttribute('class'); // create array with Table Headers
+  });
   newInput.style.width = '250px';
   newInput.setAttribute('value', '');
   let newRecord = document.querySelector('#newRecord');
   newRecord.appendChild(newInput);
-  let submitButton = document.createElement('button');
-  submitButton.setAttribute('id','submitButton');
+  let submitButton = document.createElement('button');   // create submit button
   submitButton.innerText = 'Отправить данные';
   newRecord.appendChild(submitButton);
-  let newAnimal = '';
+  newInput.setAttribute('placeholder', 'Введите новый ' + thArrayClass[num]);   // create plaseholder with name of new data type
+  let dataArray = [];
   submitButton.onclick = function () {
-    if (newInput.value != ''){
+    if (newInput.value != ''){     // if try to submit empty input it will turn red, else white
       newInput.style.backgroundColor = 'white';
-    if (newAnimal == ''){
-      newAnimal = newInput.value;
+      dataArray.push(newInput.value);  // add new data until headers won't end
       newInput.value = '';
-      newInput.placeholder = 'Введите вес нового животного';
-      num +=1;
-    } else {
-        let newWeight = newInput.value;
+      num ++;
+      newInput.setAttribute('placeholder', 'Введите новый ' + thArrayClass[num]);  // rename plaseholder after every data record
+      if (num == thArrayClass.length){  // when headers are over
+        let addData = {};
+        for (i in thArrayClass){
+          addData[thArrayClass[i]] = [dataArray[i]]; // create Associative Arrays, where key = header and value = data from inputs
+        }
+        for (key in data2){
+          let temp = addData[key];
+          data2[key].push(temp[0]);  // add created Associative Array with new data to old table data
+        }
+        addData = data2;
         submitButton.remove();
-        newInput.remove();
+        newInput.remove();  //delete inputs and submit button
         newText.innerText = 'Запись в базу добавлена!'
         newRecord.appendChild(newText);
         document.querySelector('#newRecordButton').removeAttribute('disabled');
-          async function postData(url = '', data = {}) {
+
+        let deleteButtonArray =  document.querySelectorAll('.deleteButton');
+        deleteButtonArray.forEach((item, i) => {
+            let rowForDelete = item.getAttribute('data-row-id');
+            let itemsforDelete = document.querySelectorAll('.'+rowForDelete);
+            itemsforDelete.forEach((item, i) => {
+              item.remove();
+            });
+        });
+
+        addTable(data2);
+
+          async function postData(url = '', data = {}) {  // send request to Server with new data
             const response = await fetch(url, {
               method: 'POST',
               mode: 'cors',
@@ -127,14 +158,14 @@ document.querySelector('#newRecordButton').setAttribute('disabled', 'true');
             return await response.json();
           }
           postData(urlTest, {
-            number: [num],
-            animals: [newAnimal],
-            weight: [newWeight]
+           addData
           })
             .then((data) => {
-            //  console.log(data);
-            });
-    }
-} else newInput.style.backgroundColor = "red";
+
+          });
+}
+} else {
+  newInput.style.backgroundColor = "red";
+}
 }
 }
