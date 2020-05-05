@@ -1,0 +1,71 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    },
+    {
+      "id": 2
+    },
+    {
+      "answer": 88,
+      "id": 3
+    },
+    {
+      "answer": "33333",
+      "id": 4
+    },
+    {
+      "answer": "555",
+      "id": 5
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "tables": {
+    "addData": {
+      "number": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7"
+      ],
+      "animals": [
+        "cat",
+        "dog",
+        "goose",
+        "elefant",
+        "pig",
+        "eagle",
+        "bird"
+      ],
+      "weight": [
+        "2",
+        "3",
+        "1",
+        "50",
+        "30",
+        "6",
+        "1"
+      ],
+      "height": [
+        "0.1",
+        "0.2",
+        "0.1",
+        "2",
+        "1",
+        "1",
+        "1"
+      ]
+    }
+  }
+}
