@@ -5,6 +5,7 @@ fetch(urlTest)
     return response.json();
   })
     .then((data) => {
+      console.log(data);
       data2 = data.addData;
 addTable(data2);
 });
