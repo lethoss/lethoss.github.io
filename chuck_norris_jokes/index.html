@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="css/bootstrap.css" />
+  <link rel="stylesheet" href="css/main.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chuck jokes</title>
+</head>
+<body>
+  <div class="container" id="app">
+    <div class="row">
+      <div class="col-8 leftBlock">
+        <div class="header">MSI 2020</div>
+        <h1>Hey!</h1>
+        <h2>Let's try to find a joke for you:</h2>
+        <form v-on:submit.prevent="addJoke">
+          <input id="randomJoke" type="radio" name="howToTakeJoke" value="random" class="radio" v-model="picked">
+          <label for="randomJoke">Random</label><br>
+          <input id="from_Category" type="radio" name="howToTakeJoke" value="from_category" class="radio" v-model="picked" v-model.lazy="showJokeType">
+          <label for="from_Category">From Categories</label><br>
+          <div id="categoryButtons" v-show="from_category">
+            <button type="button" class="btn btn-light" v-on:click="categoryId = 'animal'">ANIMAL</button>
+            <button type="button" class="btn btn-light" v-on:click="categoryId = 'career'">CAREER</button>
+            <button type="button" class="btn btn-light" v-on:click="categoryId = 'celebrity'">CELEBRITY</button>
+            <button type="button" class="btn btn-light" v-on:click="categoryId = 'dev'">DEV</button>
+            <br>
+          </div>
+          <input id="from_search" type="radio" name="howToTakeJoke" value="from_search" class="radio" v-model="picked" v-model.lazy="showJokeType">
+          <label for="from_search">Search</label><br>
+          <div id="jokeTextSearch" v-show="from_search">
+            <input type="text" name="jokeTextSearch" placeholder="Free text search..." class="form-control" value="" v-model="textForSearch">
+          </div>
+          <button type="submit" id="getAJoke" class="btn btn-primary">Get a Joke</button>
+        </form>
+        <joke-item
+        v-for="(joke, index) in jokeArray"
+        v-bind:joke="joke"
+        >
+      </joke-item>
+    </div>
+    <div class="col-4">
+      <div class="background" v-on:click="hide = !hide" v-show="hide">
+      </div>
+      <button class='menu-button' v-on:click="hide = !hide"> </button>
+      <span class="favorite-header-mobile">Favourite</span>
+      <div class="rightBlock" v-show="hide">
+        <div class="favorite-header">Favourite</div>
+        <span id="clone">
+          <clone
+          v-for="(joke, index) in jokeArray"
+          v-bind:joke="joke"></clone>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.js"></script>
+<script src="js/chuck.js"></script>
+</body>
+</html>

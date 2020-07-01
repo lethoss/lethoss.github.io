@@ -1,0 +1,45 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>test transport</title>
+    <link rel="stylesheet" href="main.css" />
+    <script src="transport.js"></script>
+  </head>
+    <body>
+      <div class="container">
+        <button id="button1" onclick="addForm()"> Создать новый транспорт </button>
+        <form class="chooseTransport">
+          <div>Какой тип техники будет создан?<br />
+            <input type="radio" name="transportType" value="general" id="general" required><label for="general"> Общий </label>
+            <input type="radio" name="transportType" value="wheel" id="wheel" required><label for="wheel"> Колесный </label>
+            <input type="radio" name="transportType" value="tracked" id="tracked" required><label for="tracked"> Гусенечный </label><br />
+            <button type="submit"> Выбрать транспорт </button><br />
+          </div>
+        </form>
+        <form class="mainForm">
+          <div>
+            <label for="name"> Название техники </label> <br />
+            <input type="text" name="name" id="name" placeholder="Введите название техники" required><br />
+            <label for="capacity"> Вместимость </label> <br />
+            <input type="text" name="capacity" id="capacity" placeholder="Введите вместимость" required><br />
+            <label for="fuel"> Тип используемого топлива </label> <br />
+            <input type="text" name="fuel" id="fuel" placeholder="Введите тип используемого топлива" required><br />
+            <div class="numberOfAxles">
+              <label for="numberOfAxles"> Число осей </label> <br />
+              <input type="text" name="numberOfAxles" id="numberOfAxles" placeholder="Введите число осей"><br />
+              <label for="driveUnit"> Привод </label> <br />
+              <input type="text" name="driveUnit" id="driveUnit" placeholder="Введите количество ведущих и ведомых осей в формате YxZ " ><br />
+            </div>
+            <div class="permission">
+              <label for="permission"> Разрешение на перемещение по асфальту </label> <br />
+              <input type="checkbox" name="permission" id="permission" value="1" ><br />
+            </div>
+            <button type="submit"> Ввести данные </button><br />
+          </div>
+        </form>
+
+        <div id="content"></div>
+        <script src="formByTransport.js"></script>
+      </div>
+    </body>
+</html>

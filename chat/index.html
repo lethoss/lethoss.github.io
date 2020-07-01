@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>test chat</title>
+  <link rel="stylesheet" href="css/chat.css">
+</head>
+<body>
+  <div id="app" class="container">
+    <div class="leftSide">
+      <div class="left-header">
+        <img class="your-avatar" src="images/no-avatar.jpg" alt="your avatar">
+        <img class="status" src="images/status_ok.png" alt="status">
+        <form v-on:keyup="searchContact">
+          <input id="searchChat" type="text" name="searchChat" value=""  v-model="searchText" placeholder="Search or start new chat">
+          <button class="searchButton" type="submit" name="button"></button>
+        </form>
+      </div>
+      <div class="left-main-block">
+        <div class="chats">
+          Chats
+        </div>
+        <chat-item
+        v-for="(chat, index) in chatItemsArray"
+        v-bind:key="chat.id"
+        v-bind:chat="chat"
+        v-on:send-dialog="sendDialog">
+      </chat-item>
+    </div>
+  </div>
+  <div class="rightSide">
+    <div class="right-header">
+      <img v-bind:class="{'chat-item-avatar': currentAvatar}" v-if="currentAvatar" v-bind:src="currentAvatar" alt="currentAvatar">
+      <img v-bind:class="{'status': currentStatus}" v-if="currentStatus" v-bind:src="currentStatus" alt="currentstatus">
+      <span class="current-name">{{currentName}}</span>
+    </div>
+    <div class="right-main-block">
+      <dialog-item
+      v-for="(dialog, index) in dialoges"
+      v-bind:key="dialog.text"
+      v-bind:dialog="dialog"
+      v-bind:current-avatar="currentAvatar"
+      ></dialog-item>
+      <div class="start-message" v-if="startingMessage">Please select chat to start messeging</div>
+    </div>
+    <div class="right-footer">
+      <form v-on:submit.prevent="sendMessage">
+        <input id="yourMessage" type="text" name="yourMessage" value=""  v-model="messageText" placeholder="Type your message">
+        <button class="submitButton" type="submit" name="button"></button>
+      </form>
+    </div>
+  </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.js"></script>
+<script src="js/chat.js" type="text/javascript"></script>
+</body>
+</html>

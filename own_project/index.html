@@ -1,0 +1,259 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+     <link rel="stylesheet" href="css/bootstrap.css" />
+     <link rel="stylesheet" href="css/main.css" />
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Робота ДВС</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-12 header">
+          <h1>Основы работы Двигателя внутреннего сгорания для чайников.</h1>
+        </div>
+      </div>
+      <div class="row nav">
+        <div class="fonMenu">
+          <div id="clock">
+          </div>
+        </div>
+        <img id="menuImg" src="img/list.svg" alt="значок меню" />
+        <div class="col-lg-3 navMenu list-group">
+          <a href="#section1" class="list-group-item list-group-item-action active">Раздел 1. Основные положения</a>
+          <a href="#tests1" class="list-group-item list-group-item-action ">Тесты к разделу 1</a>
+          <a href="#section2" class="list-group-item list-group-item-action">Раздел 2. Устройство двигателя внутреннего сгорания</a>
+          <a href="#tests2" class="list-group-item list-group-item-action">Тесты к разделу 2</a>
+          <a href="#section3" class="list-group-item list-group-item-action">Раздел 3. Работа двигателя внутреннего сгорания</a>
+          <a href="#tests3" class="list-group-item list-group-item-action">Тесты к разделу 3</a>
+          <a href="#section4" class="list-group-item list-group-item-action">Раздел 4. Заключение</a>
+        </div>
+        <div class="col-lg-9 text">
+          <h2 id="section1">Раздел 1. Основные положения</h2>
+          <p>ДВС - Двигатель внутреннего сгорания, наиболее распространненный тип автомобильных двигателей на текущий момент.
+            Его работа основана на преобразовании энергии сгорания топлива (а если точнее, топливно-воздушной смеси),
+            сначала в поступательное движение поршней двигателя, а затем во вращательное движение коленчатого вала.
+            В конечном итоге коленчатый вал передает свое вращение через коробку передач на ведущие колеса, за счет чего автомобиль и движется.
+            В настоящее время работа ДВС неразрывно связана с другими системами автомобиля, такими как впускная система, топливная система, выхлопная система,
+            система смазки, зажигания, охлаждения и система управления.
+          </p>
+          <p>Двигатели внутреннего сгорания могут работать на различных видах топлива, основными из которых сейчас являются дизельное топливо, бензин,
+            природный газ, их смеси в различных пропорциях (например двигатели танков), так же встречаются двигатели на водороде и спиртовых смесях.
+            Основными преимуществами этих двигателей являются автономность работы при наличии топлива, невысокая стоимость, небольшие габариты,
+            возможность усовершенствавания для увеличения производительности. Из недостатков стоит выделить низкий коэффициент полезного действия,
+            шумность и высокий уровень вибраций, токсичность.
+          </p>
+        </div>
+      </div>
+      <h3 id="tests1">Тесты к разделу 1</h3>
+      <form id="test1">
+        <span>  С помощью каких механизмов энергия сгорания топлива превращается во вращение колес?</span>
+        <div>
+          <input type="checkbox" name="test1_1" id="steeringWheel" value="steeringWheel"><label for="steeringWheel">Рулевое колесо</label></br>
+          <input type="checkbox" name="test1_2" id="Transmission" value="Transmission"><label for="Transmission">Коробка передач</label></br>
+          <input type="checkbox" name="test1_3" id="caliper" value="caliper"><label for="caliper">Суппорт колеса</label></br>
+          <input type="checkbox" name="test1_4" id="crankshaft" value="crankshaft"><label for="crankshaft">Коленчатый вал</label></br>
+          <input type="checkbox" name="test1_5" id="piston" value="piston"><label for="piston">Поршень двигателя</label></br>
+        </div>
+        <button type="submit" class="btn btn-primary">Ответить</button>
+        <div id="test11">
+        </div>
+      </form>
+      <form id="test2">
+        <div>
+          <span>Дополните выражение: Основными видами топлива в ДВС являются дизельное топливо, природный газ и  </span>
+          <input type="text" name="test2_1" id="fuel" maxlength="12">.<span id='cyrillicCheck'></span>
+        </div>
+        <button type="submit" class="btn btn-primary">Ответить</button>
+        <div id="test22">
+        </div>
+      </form>
+      <h2 id="section2">Раздел 2. Устройство двигателя внутреннего сгорания</h2>
+      <div class="row">
+        <div class="col-lg-9 text">
+          <p> Рассмотрим структуру автомобильного ДВС более детально. Поршневой двигатель состоит из кривошипно-шатунного и газоразпределительного
+            механизмов, корпуса, который объединяет блок цилиндров и головку блока цилиндов, и основных систем автомобиля, которые перечислялись в первом разделе.
+            Кривошипно-шатунный механизм состоит (КШМ), как следует из названия, состоит из поршней с шатунами, соединенных с коленчатым валом. Поршни перемещаются
+            в гильзах цилиндов под действием расширяющихся газов, которые давят на головку поршня и заставляют его совершать поступательное движение. В свою очередь
+            поршень передает это движение на шатун, который, с помощью шарнирного соединения - на коленчатый вал, заставляя его совершать уже вращательное движение.
+          </p>
+          <p> Газораспределительный механизм необходим (ГРМ) для своевременной подачи воздуха или топливно-воздушной смеси в цилиндры двигателя, а так же для отвода
+            выхлопных газов. Эти функции реализуются при помощи открытия и закрытия клапанов на каждом такте работы двигателя в нужный момент.
+            Клапаны непосредственно осуществляют подачу в цилиндры воздуха (топливно-воздушной смеси) и выпуск отработавших газов.
+            Клапан состоит из тарелки и стержня. На современных двигателях клапаны располагаются в головке блока цилиндров, а место соприкосновения
+            клапана с ней называется седлом. Клапан удерживается в закрытом состоянии с помощью пружины, а открывается при нажатии на стержень. Пружина закреплена на стержне
+            с помощью тарелки пружины и сухарей. Клапанные пружины имеют определенную жесткость, обеспечивающую закрытие клапана при работе.
+            Большинство современных ДВС имеют по два впускных и два выпускных клапана на каждый цилиндр. Открытие клапана осуществляется с помощью привода, обеспечивающего
+            передачу усилия от распределительного вала на клапан.
+          </p>
+          <p>Впускная система предназначена для подачи в двигатель воздуха. Топливная система питает двигатель топливом. Совместная работа данных систем обеспечивает образование
+            топливно-воздушной смеси. Основу топливной системы составляет система впрыска.
+            Система зажигания осуществляет принудительное воспламенение топливно-воздушной смеси в бензиновых двигателях.
+            В дизельных двигателях происходит самовоспламенение смеси.
+            Система смазки выполняет функцию снижения трения между сопряженными деталями двигателя. Охлаждение деталей двигателя, нагреваемых в результате работы,
+            обеспечивает система охлаждения. Важные функции отвода отработавших газов от цилиндров двигателя, снижения их шума и токсичности предписаны выпускной системе.
+            Система управления двигателем обеспечивает электронное управление работой систем двигателя внутреннего сгорания.
+          </p>
+        </div>
+        <div id="hiddenImg">
+          <img id="currentImg">
+          <button id="closeButton"> Закрыть</button>
+          <div id="fon">
+          </div>
+        </div>
+        <div class="col-lg-3 img">
+          <div class="imgWithCaption">
+            <img src="http://systemsauto.ru/img/shema_kshm02.jpg" alt="Устройство КШМ" /> </br>
+            Устройство КШМ
+          </div>
+          <div class="imgWithCaption">
+            <img src="http://systemsauto.ru/img/shema_grm02.jpg" alt="Устройство ГРМ" /> </br>
+            Устройство ГРМ
+          </div>
+        </div>
+      </div>
+      <h3 id="tests2">Тесты к разделу 2</h3>
+      <form id="test3">
+        <span> Какие из перечисленных элементов входят в состав поршневого ДВС? </span>
+        <div>
+          <input type="checkbox" name="test3_1" id="GDM" value="GDM"><label for="GDM">Газораспределительный механизм</label></br>
+          <input type="checkbox" name="test3_2" id="crankMechanism" value="crankMechanism"><label for="crankMechanism">Кривошипно шатунный механизм</label></br>
+          <input type="checkbox" name="test3_3" id="engineBlock" value="engineBlock"><label for="engineBlock">Блок цилиндров</label></br>
+          <input type="checkbox" name="test3_4" id="transmission2" value="transmission2"><label for="transmission2">Коробка передач</label></br>
+          <input type="checkbox" name="test3_5" id="transferСase" value="transferСase"><label for="transferСase">Раздаточная коробка</label></br>
+        </div>
+        <button type="submit" class="btn btn-primary">Ответить</button>
+        <div id="test33">
+        </div>
+      </form>
+      <form id="test4">
+        <span> КШМ в автомобильных двигателях используется для ... </span>
+        <div>
+          <input type="radio" name="test4" id="translationalToRotational" value="translationalToRotational"><label for="translationalToRotational">Преобразования вращательного движеня в поступательное</label></br>
+          <input type="radio" name="test4" id="rotationalToTranslational" value="rotationalToTranslational"><label for="rotationalToTranslational">Преобразования поступательного движеня во вращательное</label></br>
+          <input type="radio" name="test4" id="tTrAndBack" value="tTrAndBack"><label for="tTrAndBack">Оба утверждения верны</label></br>
+        </div>
+        <button type="submit" class="btn btn-primary">Ответить</button>
+        <div id="test44">
+        </div>
+      </form>
+      <form id="test5">
+        <span> Основные функции ГРМ это -  </span>
+        <div>
+          <input type="checkbox" name="test5_1" id="enginePowerIncrease" value="enginePowerIncrease"><label for="enginePowerIncrease">Увеличение мощности двигателя</label></br>
+          <input type="checkbox" name="test5_2" id="retractionExhaust" value="retractionExhaust"><label for="retractionExhaust">Отвод выхлопных газов</label></br>
+          <input type="checkbox" name="test5_3" id="harmfulEmissions" value="harmfulEmissions"><label for="harmfulEmissions">Контроль количества вредных выбросов в выхлопе</label></br>
+          <input type="checkbox" name="test5_3" id="supplyOfFuelAirMixture" value="supplyOfFuelAirMixture"><label for="supplyOfFuelAirMixture">Подача топливно воздушной смеси</label></br>
+        </div>
+        <button type="submit" class="btn btn-primary">Ответить</button>
+        <div id="test55">
+        </div>
+      </form>
+      <h2 id="section3">Раздел 3. Работа двигателя внутреннего сгорания</h2>
+      <div class="row">
+        <div class="col-lg-9 text">
+          <p>Принцип работы ДВС основан на эффекте теплового расширения газов, возникающего
+            при сгорании топливно-воздушной смеси и обеспечивающего перемещение поршня в цилиндре.
+            Работа поршневого ДВС осуществляется циклически. Каждый рабочий цикл происходит за два оборота коленчатого вала и включает четыре такта
+            (четырехтактный двигатель): впуск, сжатие, рабочий ход и выпуск.
+            Во время тактов впуск и рабочий ход происходит движение поршня вниз, а тактов сжатие и выпуск – вверх. Рабочие циклы в каждом из цилиндров
+            двигателя не совпадают по фазе, чем достигается равномерность работы ДВС. В некоторых конструкциях двигателей внутреннего сгорания рабочий
+            цикл реализуется за два такта – сжатие и рабочий ход (двухтактный двигатель).
+          </p>
+          <p>На такте впуск впускная и топливная системы обеспечивают образование топливно-воздушной смеси.
+            В зависимости от конструкции смесь образуется во впускном коллекторе (центральный и распределенный впрыск бензиновых двигателей)
+            или непосредственно в камере сгорания (непосредственный впрыск бензиновых двигателей, впрыск дизельных двигателей).
+            При открытии впускных клапанов газораспределительного механизма воздух или топливно-воздушная смесь за счет разряжения,
+            возникающего при движении поршня вниз, подается в камеру сгорания.
+          </p>
+          <p>  На такте сжатия впускные клапаны закрываются, и топливно-воздушная смесь сжимается в цилиндрах двигателя.
+          </p>
+          <p>Такт рабочий ход сопровождается воспламенением топливно-воздушной смеси (принудительное или самовоспламенение).
+            В результате возгорания образуется большое количество газов, которые давят на поршень и заставляют его двигаться вниз.
+            Движение поршня через кривошипно-шатунный механизм преобразуется во вращательное движение коленчатого вала, которое затем используется
+            для движения автомобиля.
+          </p>
+          <p>При такте выпуск открываются выпускные клапаны газораспределительного механизма, и отработавшие газы удаляются из
+            цилиндров в выпускную систему, где производится их очистка, охлаждение и снижение шума. Далее газы поступают в атмосферу.
+          </p>
+        </div>
+        <div class="col-lg-3 img">
+          <div class="imgWithCaption">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/4StrokeEngine_Ortho_3D_Small.gif/220px-4StrokeEngine_Ortho_3D_Small.gif" alt="Работа ДВС в разрезе" />
+            Работа ДВС в разрезе
+          </div>
+          <div class="imgWithCaption">
+            <img src="https://cs.pikabu.ru/post_img/2013/04/14/10/1365953641_56244178.gif" alt="Работа каждого цилиндра" />
+            Работа каждого цилиндра
+          </div>
+        </div>
+      </div>
+      <h3 id="tests3">Тесты к разделу 3</h3>
+      <form id="test6">
+        <span> Перечислите правильные названия тактов работы четырехтактного ДВС: </span>
+        <div>
+          <input type="checkbox" name="test6_1" id="entrance" value="entrance"><label for="entrance">Вход</label></br>
+          <input type="checkbox" name="test6_2" id="inlet" value="inlet"><label for="inlet">Впуск</label></br>
+          <input type="checkbox" name="test6_3" id="idling" value="idling"><label for="idling">Холостой ход</label></br>
+          <input type="checkbox" name="test6_4" id="compression" value="compression"><label for="compression">Сжатие</label></br>
+          <input type="checkbox" name="test6_5" id="workingStroke" value="workingStroke"><label for="workingStroke">Рабочий ход</label></br>
+          <input type="checkbox" name="test6_6" id="ejection" value="ejection"><label for="ejection">Выброс</label></br>
+          <input type="checkbox" name="test6_7" id="output" value="output"><label for="output">Выпуск</label></br>
+        </div>
+        <button type="submit" class="btn btn-primary">Ответить</button>
+        <div id="test66">
+        </div>
+      </form>
+
+      <form id="test7">
+        <span> Топливно-воздушная смесь образуется на такте: </span>
+        <div>
+          <input type="radio" name="test7" id="inlet2" value="inlet2"><label for="inlet2">Впуск</label></br>
+          <input type="radio" name="test7" id="compression2" value="compression2"><label for="compression2">Сжатие</label></br>
+          <input type="radio" name="test7" id="workingStroke2" value="workingStroke2"><label for="workingStroke2">Рабочий ход</label></br>
+          <input type="radio" name="test7" id="output2" value="output2"><label for="output2">Выпуск</label></br>
+        </div>
+        <button type="submit" class="btn btn-primary">Ответить</button>
+        <div id="test77">
+        </div>
+      </form>
+
+      <form id="test8">
+        <span> Во время рабочего хода на поршень действует и заставляет двигаться: </span>
+        <div>
+          <input type="radio" name="test8" id="KSHM" value="KSHM"><label for="KSHM">КШМ</label></br>
+          <input type="radio" name="test8" id="gasPedal" value="gasPedal"><label for="gasPedal">Нажатие водителя на педаль газа</label></br>
+          <input type="radio" name="test8" id="ignitionGas" value="ignitionGas"><label for="ignitionGas">Газы, образовавшиесь при воспламенении топлива</label></br>
+          <input type="radio" name="test8" id="adjacentPiston" value="adjacentPiston"><label for="adjacentPiston">Соседний поршень с тактом выпуск</label></br>
+        </div>
+        <button type="submit" class="btn btn-primary">Ответить</button>
+        <div id="test88">
+        </div>
+      </form>
+
+      <h2 id="section4">Раздел 4. Заключение</h2>
+      <p>Рассмотренный принцип работы двигателя внутреннего сгорания позволяет понять, почему ДВС имеет небольшой коэффициент полезного действия - порядка 30-40%.
+        В конкретный момент времени как правило только в одном цилиндре совершается полезная работа, в остальных – обеспечивающие такты: впуск, сжатие, выпуск.
+        Основная конструктивная особенность двигателя – возвратно-поступательное движение поршня, ограничивающее частоту вращения, является причиной
+        возникновения неуравновешенных сил инерции и моментов от них. Однако, независимость от постоянных источников механической энергии, малые габариты и масса,
+        обусловливает их широкое применение на автомобилях, сельскохозяйственных машинах, тепловозах, судах, самоходной военной технике и т. д.
+        Совершенствование ДВС направлено на увеличение их мощности, экономичности, уменьшение массы и габаритов, соответствие экологическим требованиям
+        (снижение токсичности и шума), обеспечение надёжности при приемлемом соотношении цены и качества.
+      </p>
+
+      <div class="flooter row">
+        <div class="flooterText col-lg-11">
+          Данный сайт создан исключительно с целью изучения html, css и javascript, и не имеет никакой коммерческой направленности.
+        </div>
+        <div class="col-lg-1 toStart">
+          <a href="#section1" class="toStartButton">В начало</a>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/js.js"></script>
+    <script src="js/clock.js"></script>
+  </body>
+</html>

@@ -1,0 +1,124 @@
+body{
+  margin: 0px;
+}
+.mainMenu{
+  padding-left: 20px;
+  display: flex;
+  height: 35px;
+  border: solid;
+  border-width: 2px;;
+}
+.mainMenu a {
+  padding-top: 5px;
+  display: block;
+  margin-right: 5px;
+  margin-left: 0px;
+}
+.mainMenu .line{
+  height: 25px;
+  margin-top: 4px;
+  border-right: solid;
+  border-width: thin;
+  border-color: black;
+  margin-right: 5px;
+}
+
+.leftMenu {
+  overflow-y: scroll;
+  width: 300px;
+  height: 90vh;
+  padding-bottom: 55px;
+}
+
+.leftMenuA {
+  display: block;
+  color: black;
+  text-decoration: none;
+  height: 20px;
+}
+.leftMenu ul{
+  padding-left: 10px;
+}
+.contentContainer{
+  display: flex;
+  border: solid;
+  border-width: 2px;
+}
+.breadcrumb{
+  display: flex;
+  list-style-type: 	"\276F";
+  margin: 0px;
+  padding-left: 0px;
+  padding-top: 5px;
+}
+.breadcrumb > li:first-child{
+  list-style-type: none;
+  padding-top: 2px;
+}
+.breadcrumb li{
+  margin-right: 20px;
+  padding-left: 5px;
+}
+.sourse{
+  height: 35px;
+  border: solid;
+  border-width: 2px;
+  margin-left: 2px;
+}
+.gallery{
+  display: flex;
+  flex-flow: wrap;
+  justify-content: space-around;
+  padding-left: 125px;
+  padding-right: 125px;
+}
+img{
+  width: 250px;
+  height: 250px;
+}
+.gallery>div>div{
+  text-align: center;
+}
+.gallery>div{
+  padding: 10px;
+}
+.gallery {
+  padding-top: 20px;
+  height: 90vh;
+  overflow: auto;
+}
+.leftMenuDiv{
+  width: 300px;
+}
+.icon{
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+}
+.img1{
+  background-image: url(https://img.icons8.com/material-rounded/20/000000/opened-folder.png);
+}
+.img2{
+  background-image: url(https://img.icons8.com/ios/20/000000/opened-folder.png);
+}
+.img3{
+  background-image: url(https://img.icons8.com/metro/20/000000/add-folder.png);
+}
+.img4{
+    background-image: url(https://img.icons8.com/ios/20/000000/delete-folder.png);
+}
+.img5{
+  background-image: url(https://img.icons8.com/material-outlined/20/000000/hospital-folder.png);
+}
+.img6{
+  background-image: url(https://img.icons8.com/windows/20/000000/folder-invoices.png);
+}
+.img7{
+  background-image: url(https://img.icons8.com/ios/20/000000/sort-right.png);
+}
+.img8{
+  background-image: url(https://img.icons8.com/ios/20/000000/sort-down.png);
+}
+.img9{
+  background-image: url(https://img.icons8.com/windows/20/000000/--folder-listing.png);
+}

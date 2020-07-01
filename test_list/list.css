@@ -1,0 +1,24 @@
+button {
+  display: inline;
+  margin: 5px;
+}
+form {
+  display: inline;
+}
+.listItemText {
+  display: inline;
+}
+ul {
+  margin-right: 50px;
+}
+li {
+  list-style-type: none;
+}
+input {
+  min-width: 200px;
+}
+#isBackcol, label {
+  display: block; 
+  float: right;
+  min-width: auto;
+}

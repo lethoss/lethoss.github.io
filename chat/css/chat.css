@@ -1,0 +1,233 @@
+body {
+  margin: 0;
+  background-color: #ced6d0;
+  font-family: arial;
+}
+.container {
+  display: flex;
+  height: 100vh;
+  background-color: #ced6d0;
+  overflow:hidden;
+  border-bottom: solid 3px;
+  border-color: #acb0ae;
+
+}
+.leftSide {
+  width: 40%;
+  height: 100vh;
+  border-right: solid 1px;
+  border-color: #acb0ae;
+}
+.left-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 20%;
+  border-bottom: solid 1px;
+  border-color: #acb0ae;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 5px;
+}
+#searchChat {
+  width: 89%;
+  padding-left: 10%;
+  padding-right: 0%;
+  background-color: #e8edea;
+  border-radius: 25px;
+  border: solid 1px #acb0ae;
+  height: 40px;
+  outline: none
+}
+
+.your-avatar {
+  display: block;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+.status {
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  top: 42px;
+  left: 53px;
+}
+.left-main-block {
+  background-color: white;
+  height: 80%;
+  border-bottom: solid 3px;
+  border-color: #acb0ae;
+  padding-bottom: 1px;
+  overflow-y: auto;
+}
+.chats {
+  color: #58dae0;
+  margin-top: 25px;
+  margin-left: 10px;
+  font-weight: bold;
+  margin-bottom: 25px;
+}
+.chat-item{
+  position: relative;
+  display: flex;
+  border-bottom: solid 1px;
+  border-color: #acb0ae;
+  padding-bottom: 25px;
+  margin-top: 25px;
+}
+.chat-item-avatar {
+  padding-left: 20px;
+  padding-right: 20px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+.chat-content {
+  width: 100%;
+  padding-right: 20px;
+}
+.chat-date {
+  float: right;
+  color: #acb0ae;
+  font-size: 0.8em;
+}
+.chat-text {
+  color: #818282;
+  padding-top: 4px;
+  font-size: 0.8em;
+  width: 78%;
+}
+.rightSide {
+  width: 60%;
+  height: 100vh;
+}
+.right-header {
+  position: relative;
+  padding-top: 5px;
+  height: 10%;
+  border-bottom: solid 1px;
+  border-color: #acb0ae;
+}
+.current-name {
+  position: relative;
+  bottom: 15px;
+}
+.right-main-block {
+  height: 70%;
+  background-color: #e8edea;
+  border-bottom: solid 1px;
+  border-color: #acb0ae;
+  overflow-y: auto;
+  padding-top: 30px;
+}
+.start-message {
+  margin-top: 30%;
+  text-align: center;
+  font-size: 2em;
+}
+.dialog-item-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: inline-block;
+  float: left;
+  clear: both;
+  padding-left: 5px;
+}
+.leftText {
+  float: left;
+  clear: right;
+  max-width: 70%;
+  padding-left: 10px;
+  padding-top: 0.9em;
+  padding-bottom: 0.2em;
+  padding-right: 10px;
+  min-height: 2em;
+  margin-left: 5px;
+  margin-right: 5px;
+  display: inline-block;
+  background-color: #252942;
+  border-radius: 25px;
+  color: white;
+}
+.leftDate {
+  float: left;
+  clear: both;
+  font-size: 0.7em;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  display: inline-block;
+  color: grey;
+}
+.rightText{
+  float: right;
+  clear: both;
+  max-width: 70%;
+  padding-left: 10px;
+  padding-top: 0.9em;
+  padding-bottom: 0.2em;
+  padding-right: 10px;
+  min-height: 2em;
+  margin-left: 5px;
+  margin-right: 5px;
+  display: inline-block;
+  background-color: #b0b5c2;
+  border-radius: 25px;
+  color: black;
+}
+.rightDate {
+  float: right;
+  clear: both;
+  padding-left: 10px;
+  font-size: 0.7em;
+  padding-right: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  display: inline-block;
+  color: grey;
+}
+.right-footer {
+  background-color: #ced6d0;
+  height: 20%;
+}
+#yourMessage {
+  width: 95.5%;
+  padding-left: 2%;
+  background-color: white;
+  border-radius: 25px;
+  border: solid 1px #acb0ae;
+  height: 60px;
+  margin-top: 4vh;
+  margin-left: 0.5vw;
+  outline: none;
+}
+.searchButton {
+  color: transparent;
+  border: none;
+  width: 30px;
+  height: 30px;
+  background: url("https://lethoss.github.io/chat/images/glass.png") no-repeat;
+  position: relative;
+  bottom: 34px;
+  left: 3%;
+  outline: none;
+  display: block;
+}
+.submitButton {
+  color: transparent;
+  border: none;
+  width: 30px;
+  height: 30px;
+  background: url("https://lethoss.github.io/chat/images/arrow.png") no-repeat;
+  position: relative;
+  bottom: 45px;
+  left: 90%;
+  outline: none;
+}

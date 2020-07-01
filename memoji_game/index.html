@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>Memoji from Lethos</title>
+  <link rel="stylesheet" href="css/memoji.css">
+</head>
+<body>
+  <div id="vm" class="container">
+    <div class="blackBackground" v-if="gameEnd"></div>
+    <div class="loseGame" v-if="gameEnd">
+      <div class="forAnimation">
+        <div class="gameStatusText animationText0"> {{gameStatus[0]}} </div>
+        <div class="gameStatusText animationText1"> {{gameStatus[1]}} </div>
+        <div class="gameStatusText animationText2"> {{gameStatus[2]}} </div>
+        <div class="gameStatusText animationText3"> {{gameStatus[3]}} </div>
+      </div>
+      <button class="playAgainButton" @click="regame"> <div class="buttonText"> {{buttonText}} </div> </button>
+    </div>
+    <h1 class="header">Memoji</h1>
+    <div id="app">
+      <cart v-for="(emoji,index) in emojiArray"
+      v-bind:key="emoji.id"
+      v-bind:emoji="emoji"
+      v-on:change-cart="rotateCart">
+    </cart>
+  </div>
+  <div class="timer">{{timer.min}}:{{timer.sec}}</div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.js"></script>
+<script src="js/memoji.js"></script>
+</body>
+</html>

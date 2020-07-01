@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>test list</title>
+    <link rel="stylesheet" type="text/css" href="list.css" />
+  </head>
+  <body>
+    <div id="app">
+      <label for="isBackcol">Turn on to add background color to next sublist you will add</label><input id="isBackcol" type="checkbox" v-model="isBackcol">
+      <ul>
+        <list-item
+          :list="listData"
+        ></list-item>
+      </ul>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>

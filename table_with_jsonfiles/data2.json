@@ -1,0 +1,10 @@
+{
+
+
+    "addData":{
+    "number": [1,2,3,4,5],
+    "animals": ["cat", "dog","goose","elefant","pig"],
+    "weight": [2,3,1,50,30]
+
+}
+}
