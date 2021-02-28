@@ -9,4 +9,4 @@
 Макет - https://d3c33hcgiwev3.cloudfront.net/imageAssetProxy.v1/_f89dd7bfafcf7285e60ab96ac57832fc_stage3-layout-popup.png?expiry=1592611200000&hmac=Ja9oRd8OlB9jtNud5hkCoEQatvN2mVB1ceFWBnAztjk
 
 
-Ссылка для ознакомления - https://lethoss.github.io/memori/
+Ссылка для ознакомления - https://lethoss.github.io/memoji_game/
